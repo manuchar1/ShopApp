@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "742133752957",
+    "project_id": "shopapp-2cc10",
+    "storage_bucket": "shopapp-2cc10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742133752957:android:5a9ddf155e4bf3e5517d14",
+        "android_client_info": {
+          "package_name": "com.tbcacademy.shopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742133752957-c4rmb29rgs8jlr5j22ir831r8uaeftqi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tbcacademy.shopapp",
+            "certificate_hash": "bec001e971ad25b7cd829381238926daa9d2b90c"
+          }
+        },
+        {
+          "client_id": "742133752957-750q8c1no8qddg33d25qcu4ut23bsuhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLx9FPi4m4-9Ud6hlWOY63PLF2qeNv2jE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742133752957-750q8c1no8qddg33d25qcu4ut23bsuhb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
