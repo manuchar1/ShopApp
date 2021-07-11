@@ -4,7 +4,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="if_not_account_register">don\'t have an account? Register</string>
+    <string name="if_already_a_member">Already a member? Log in</string>
+    <string name="if_not_account_register">New user? Sing up here</string>
     <string name="error_password_too_short">The password must be at least %d digits long</string>
     <string name="error_username_too_short">The username can\'t have less than %d characters</string>
     <string name="error_username_too_long">The username can\'t have more than %d characters</string>
@@ -13,4 +14,6 @@
     <string name="error_incorrectly_repeated_password">The passwords do not match</string>
     <string name="error_invalid_credentials">The E-Mail or password is incorrect</string>
     <string name="success_registration">Successfully registered account</string>
+    <string name="drawer_menu_text">drawer menu text</string>
+    <string name="my_feed">My Feed</string>
 </resources>

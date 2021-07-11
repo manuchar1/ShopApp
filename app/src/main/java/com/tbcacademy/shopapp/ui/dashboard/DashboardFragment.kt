@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tbcacademy.shopapp.R
 import com.tbcacademy.shopapp.databinding.FragmentDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class DashboardFragment : Fragment() {
 

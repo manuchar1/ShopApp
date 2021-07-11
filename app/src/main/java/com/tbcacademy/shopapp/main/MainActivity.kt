@@ -24,11 +24,12 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
+        supportActionBar?.hide()
     }
 
     fun hideBottomNavigationView() {
         binding.navView.clearAnimation()
-        binding.navView.animate().translationY(binding.navView.height.toFloat()).duration = 300
+        binding.navView.animate().translationY(binding.navView.height.toFloat())
     }
 
     fun showBottomNavigationView() {

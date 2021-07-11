@@ -13,7 +13,7 @@ import kotlinx.coroutines.withContext
 class DefaultAuthRepository : AuthRepository {
 
     val auth = FirebaseAuth.getInstance()
-    val users = FirebaseFirestore.getInstance().collection("users")
+     private val users = FirebaseFirestore.getInstance().collection("users")
 
     override suspend fun register(
         email: String,
@@ -22,18 +22,23 @@ class DefaultAuthRepository : AuthRepository {
     ): Resource<AuthResult> {
         return withContext(Dispatchers.IO) {
             safeCall {
-                val result = auth.createUserWithEmailAndPassword(email,password).await()
+                val result = auth.createUserWithEmailAndPassword(email, password).await()
                 val uid = result.user?.uid!!
-                val user = User(uid,username)
+                val user = User(uid, username)
                 users.document(uid).set(user).await()
                 Resource.Success(result)
-
             }
-
         }
     }
-
-    override suspend fun login(email: String, password: String): Resource<AuthResult> {
-        TODO("Not yet implemented")
+    override suspend fun login(
+        email: String,
+        password: String
+    ): Resource<AuthResult> {
+        return withContext(Dispatchers.IO) {
+            safeCall {
+                val result = auth.signInWithEmailAndPassword(email,password).await()
+                Resource.Success(result)
+            }
+        }
     }
 }
