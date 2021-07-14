@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tbcacademy.shopapp.databinding.DrawerMenuTextBinding
-import com.tbcacademy.shopapp.model.Menu
+import com.tbcacademy.shopapp.models.Menu
 
 typealias menuItemOnClick = (actionId: Int) -> Unit
 

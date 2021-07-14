@@ -1,7 +1,7 @@
 package com.tbcacademy.shopapp.di
 
-import com.tbcacademy.shopapp.repositories.AuthRepository
-import com.tbcacademy.shopapp.repositories.DefaultAuthRepository
+import com.tbcacademy.shopapp.repositories.auth.AuthRepository
+import com.tbcacademy.shopapp.repositories.auth.AuthRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,5 +15,5 @@ object AuthModule {
 
     @ActivityScoped
     @Provides
-    fun provideAuthRepository() = DefaultAuthRepository() as AuthRepository
+    fun provideAuthRepository() = AuthRepositoryImpl() as AuthRepository
 }

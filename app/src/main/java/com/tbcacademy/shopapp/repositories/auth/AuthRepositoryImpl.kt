@@ -1,4 +1,4 @@
-package com.tbcacademy.shopapp.repositories
+package com.tbcacademy.shopapp.repositories.auth
 
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
-class DefaultAuthRepository : AuthRepository {
+class AuthRepositoryImpl : AuthRepository {
 
     val auth = FirebaseAuth.getInstance()
      private val users = FirebaseFirestore.getInstance().collection("users")

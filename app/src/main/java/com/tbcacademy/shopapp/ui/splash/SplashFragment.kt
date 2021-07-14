@@ -20,9 +20,6 @@ class SplashFragment : BaseFragment<SplashFragmentBinding>(SplashFragmentBinding
         binding.animationView.playAnimation()
         binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator?) {
-                if (requireActivity() is MainActivity) {
-                    (activity as MainActivity?)?.hideBottomNavigationView()
-                }
             }
 
             override fun onAnimationEnd(animation: Animator?) {
@@ -41,12 +38,7 @@ class SplashFragment : BaseFragment<SplashFragmentBinding>(SplashFragmentBinding
     }
 
     fun openFragment() {
-        findNavController().navigate(R.id.action_splashFragment_to_navigation_home)
-        if (requireActivity() is MainActivity) {
-            (activity as MainActivity?)?.showBottomNavigationView()
-        }
-
-
+        findNavController().navigate(R.id.action_splashFragment2_to_loginFragment)
     }
 
 }

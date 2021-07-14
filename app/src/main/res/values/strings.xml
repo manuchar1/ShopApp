@@ -16,4 +16,6 @@
     <string name="success_registration">Successfully registered account</string>
     <string name="drawer_menu_text">drawer menu text</string>
     <string name="my_feed">My Feed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

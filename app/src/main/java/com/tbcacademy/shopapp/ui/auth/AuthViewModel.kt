@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.AuthResult
 import com.tbcacademy.shopapp.R
-import com.tbcacademy.shopapp.repositories.AuthRepository
+import com.tbcacademy.shopapp.repositories.auth.AuthRepository
 import com.tbcacademy.shopapp.utils.Constants.MAX_USERNAME_LENGTH
 import com.tbcacademy.shopapp.utils.Constants.MIN_PASSWORD_LENGTH
 import com.tbcacademy.shopapp.utils.Constants.MIN_USERNAME_LENGTH

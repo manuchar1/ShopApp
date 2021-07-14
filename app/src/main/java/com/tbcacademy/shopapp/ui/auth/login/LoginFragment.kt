@@ -43,10 +43,10 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::i
             onLoading = { binding.loginProgress.isVisible = true },
         ) {
             binding.loginProgress.isVisible = false
-            findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
-            if (requireActivity() is MainActivity) {
+            findNavController().navigate(R.id.action_loginFragment_to_navHomeFragment)
+           /* if (requireActivity() is MainActivity) {
                 (activity as MainActivity?)?.showBottomNavigationView()
-            }
+            }*/
 
         })
 
@@ -69,6 +69,4 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::i
         binding.tvRegister.text = spannable
 
     }
-
-
 }

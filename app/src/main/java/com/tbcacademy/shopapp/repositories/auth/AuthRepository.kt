@@ -1,4 +1,4 @@
-package com.tbcacademy.shopapp.repositories
+package com.tbcacademy.shopapp.repositories.auth
 
 import com.google.firebase.auth.AuthResult
 import com.tbcacademy.shopapp.utils.Resource
