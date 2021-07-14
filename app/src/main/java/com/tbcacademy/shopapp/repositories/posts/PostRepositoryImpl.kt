@@ -7,7 +7,7 @@ import com.tbcacademy.shopapp.network.PostService
 import com.tbcacademy.shopapp.utils.Resource
 
 class PostRepositoryImpl(private val postService: PostService):PostRepository {
-    override suspend fun getPosts(): Resource<Post> {
+    override suspend fun getPosts(): Resource<List<Post>> {
         return safeCall {
 
             val response = postService.getPosts()

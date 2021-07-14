@@ -17,13 +17,14 @@ class WallViewModel @ViewModelInject constructor(
     private val postRepository: PostRepository
 ) : ViewModel() {
 
-    private val _postLiveData = MutableLiveData<Event<Resource<Post>>>()
-    val postLiveData : LiveData<Event<Resource<Post>>> = _postLiveData
+    private val _postLiveData = MutableLiveData<Event<Resource<List<Post>>>>()
+    val postLiveData : LiveData<Event<Resource<List<Post>>>> = _postLiveData
 
     fun getPosts() {
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                postRepository.getPosts()
+                //postRepository.getPosts()
+                _postLiveData.postValue(Event(postRepository.getPosts()))
             }
 
         }

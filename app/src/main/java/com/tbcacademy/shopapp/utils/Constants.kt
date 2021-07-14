@@ -7,4 +7,7 @@ object Constants {
     const val BASE_URL = "https://ktorhighsteaks.herokuapp.com/"
     const val POSTS_API_ENDPOINT = "posts"
 
+    const val TOKEN = "TOKEN"
+    const val HAS_SESSION = "HAS_SESSION"
+
 }

@@ -7,21 +7,23 @@ import androidx.annotation.Keep
 @Keep
 data class Post(
     @SerializedName("category_id")
-    val categoryId: Int,
+    val categoryId: Int?,
     @SerializedName("description")
-    val description: String,
+    val description: String?,
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @SerializedName("owner")
-    val owner: Int,
+    val owner: Int?,
     @SerializedName("price")
-    val price: Double,
+    val price: Double?,
     @SerializedName("price_type")
-    val priceType: String,
+    val priceType: String?,
     @SerializedName("tags")
-    val tags: String,
+    val tags: String?,
     @SerializedName("title")
-    val title: String,
+    val title: String?,
     @SerializedName("urls")
-    val urls: List<String>
-)
+    val urls: List<ImageItem>?
+){
+    data class ImageItem(val url: String)
+}

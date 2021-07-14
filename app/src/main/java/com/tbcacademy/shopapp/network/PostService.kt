@@ -13,7 +13,7 @@ import retrofit2.http.GET
 interface PostService {
 
     @GET(POSTS_API_ENDPOINT)
-    suspend fun getPosts(): Response<Post>
+    suspend fun getPosts(): Response<List<Post>>
 
 
 }

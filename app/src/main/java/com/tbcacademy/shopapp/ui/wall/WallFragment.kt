@@ -3,6 +3,8 @@ package com.tbcacademy.shopapp.ui.wall
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.tbcacademy.shopapp.adapter.PostAdapter
 import com.tbcacademy.shopapp.base.BaseFragment
 import com.tbcacademy.shopapp.base.snackbar
 import com.tbcacademy.shopapp.databinding.FragmentWallBinding
@@ -13,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class WallFragment : BaseFragment<FragmentWallBinding>(FragmentWallBinding::inflate) {
 
     private val viewModel: WallViewModel by viewModels()
-
+    private lateinit var postAdapter: PostAdapter
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -24,8 +26,11 @@ class WallFragment : BaseFragment<FragmentWallBinding>(FragmentWallBinding::infl
 
     }
 
-    private fun initPosts(){
+    private fun initPosts() {
         viewModel.getPosts()
+        postAdapter = PostAdapter()
+        binding.recyclerViewPosts.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewPosts.adapter = postAdapter
     }
 
     private fun setListeners() {
@@ -34,7 +39,7 @@ class WallFragment : BaseFragment<FragmentWallBinding>(FragmentWallBinding::infl
         }
     }
 
-    private fun observes(){
+    private fun observes() {
 
         viewModel.postLiveData.observe(viewLifecycleOwner, EventObserver(
             onError = {
@@ -43,16 +48,16 @@ class WallFragment : BaseFragment<FragmentWallBinding>(FragmentWallBinding::infl
 
             },
             onLoading = {
-                binding.swipeToRefresh.isRefreshing
+                binding.swipeToRefresh.isRefreshing = true
 
             }
 
         ) {
-            //binding.registerProgress.isVisible = false
+            postAdapter.setData(it.toMutableList())
+            binding.swipeToRefresh.isRefreshing = false
 
         })
     }
-
 
 
 }
