@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tbcacademy.shopapp.base.setImage
 import com.tbcacademy.shopapp.databinding.ItemImageBinding
-import com.tbcacademy.shopapp.models.Post
+import com.tbcacademy.shopapp.network.models.Post
 
 class ViewPagerAdapter(private val images: MutableList<Post.ImageItem>) :
     RecyclerView.Adapter<ViewPagerAdapter.ViewHolder>() {

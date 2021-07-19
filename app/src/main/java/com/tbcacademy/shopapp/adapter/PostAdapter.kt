@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.tbcacademy.shopapp.base.goneIf
 import com.tbcacademy.shopapp.databinding.ItemRecyclerBinding
-import com.tbcacademy.shopapp.models.Post
+import com.tbcacademy.shopapp.network.models.Post
 
 class PostAdapter() :
     RecyclerView.Adapter<PostAdapter.ViewHolder>() {

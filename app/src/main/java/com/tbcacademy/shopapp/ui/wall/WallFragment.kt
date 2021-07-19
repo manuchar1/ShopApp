@@ -20,9 +20,12 @@ class WallFragment : BaseFragment<FragmentWallBinding>(FragmentWallBinding::infl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //hideBottomNavigation()
         observes()
         initPosts()
         setListeners()
+
 
     }
 

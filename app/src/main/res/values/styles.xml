@@ -21,4 +21,13 @@
         <item name="fontFamily">@font/roboto</item>
     </style>
 
+    <style name="DrawerMenuStyle" parent="Theme.MaterialComponents">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/main_text_color_grey</item>
+    </style>
+
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

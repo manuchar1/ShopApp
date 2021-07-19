@@ -1,7 +1,6 @@
 package com.tbcacademy.shopapp.di
 
 import android.content.Context
-import com.squareup.okhttp.OkHttpClient
 import com.tbcacademy.shopapp.BuildConfig
 import com.tbcacademy.shopapp.data.UserPreference
 import com.tbcacademy.shopapp.network.PostService
@@ -55,15 +54,7 @@ object AppModule {
         return builder.build()
     }
 
- /*   @Singleton
-    @Provides
-    fun provideApi():PostService{
-        return Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-            .create(PostService::class.java)
-    }*/
+
     @Singleton
     @Provides
     fun postSetvice (@ApplicationContext context: Context,userPreference: UserPreference): PostService = Retrofit.Builder().baseUrl(

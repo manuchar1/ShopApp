@@ -14,25 +14,25 @@
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/iBtnLeft"
-        android:layout_marginStart="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/left"
+        android:layout_marginStart="12dp"
         android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/iBtnRight"
-        android:layout_marginEnd="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/right"
+        android:layout_marginEnd="12dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right" />
 
     <TextView
         android:id="@+id/pageNumber"

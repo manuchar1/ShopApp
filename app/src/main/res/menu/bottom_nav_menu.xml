@@ -9,11 +9,15 @@
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_favorites"
-        android:title="favorites" />
+        android:title="@string/favorites" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/wallet_filled"
         android:title="@string/title_notifications" />
+
+    <item android:id="@+id/ordersFragment"
+        android:icon="@drawable/ic_shopping_bag"
+        android:title="@string/track_orders"/>
 
 </menu>

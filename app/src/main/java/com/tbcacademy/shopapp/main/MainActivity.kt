@@ -15,15 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
     }
 
-/*    fun hideBottomNavigationView() {
-        binding.navView.clearAnimation()
-        binding.navView.animate().translationY(binding.navView.height.toFloat())
-    }
-
-    fun showBottomNavigationView() {
-        binding.navView.clearAnimation()
-        binding.navView.animate().translationY(0f).duration = 300
-    }*/
 }

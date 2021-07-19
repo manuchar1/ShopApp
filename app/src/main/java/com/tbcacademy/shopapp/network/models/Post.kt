@@ -1,4 +1,4 @@
-package com.tbcacademy.shopapp.models
+package com.tbcacademy.shopapp.network.models
 
 
 import com.google.gson.annotations.SerializedName

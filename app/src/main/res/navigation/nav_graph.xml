@@ -23,9 +23,6 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_navHomeFragment"
-            app:destination="@id/navHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -35,9 +32,4 @@
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/navHomeFragment"
-        android:name="com.tbcacademy.shopapp.ui.navfragment.NavHomeFragment"
-        android:label="fragment_nav_home"
-        tools:layout="@layout/fragment_nav_home" />
 </navigation>

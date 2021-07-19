@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tbcacademy.shopapp.models.Post
+import com.tbcacademy.shopapp.network.models.Post
 import com.tbcacademy.shopapp.repositories.posts.PostRepository
 import com.tbcacademy.shopapp.utils.Event
 import com.tbcacademy.shopapp.utils.Resource
@@ -18,12 +18,11 @@ class WallViewModel @ViewModelInject constructor(
 ) : ViewModel() {
 
     private val _postLiveData = MutableLiveData<Event<Resource<List<Post>>>>()
-    val postLiveData : LiveData<Event<Resource<List<Post>>>> = _postLiveData
+    val postLiveData: LiveData<Event<Resource<List<Post>>>> = _postLiveData
 
     fun getPosts() {
         viewModelScope.launch {
-            withContext(Dispatchers.IO){
-                //postRepository.getPosts()
+            withContext(Dispatchers.IO) {
                 _postLiveData.postValue(Event(postRepository.getPosts()))
             }
 

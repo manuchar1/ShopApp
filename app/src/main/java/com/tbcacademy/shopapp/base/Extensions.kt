@@ -1,11 +1,13 @@
 package com.tbcacademy.shopapp.base
 
+
 import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.tbcacademy.shopapp.R
+import com.tbcacademy.shopapp.main.NavigationActivity
 import com.tbcacademy.shopapp.utils.Resource
 
 
@@ -48,3 +50,12 @@ fun View.gone() {
 fun View.goneIf(isGone: Boolean) = if (isGone) gone() else show()
 
 fun View.hideIf(isHide: Boolean) = if (isHide) hide() else show()
+
+
+fun Fragment.hideBottomNavigation() {
+    if (requireActivity() is NavigationActivity) {
+        (activity as NavigationActivity?)?.hideBottomNavigationView()
+    }
+}
+
+

@@ -1,5 +1,6 @@
 package com.tbcacademy.shopapp.ui.auth.login
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableString
@@ -10,19 +11,26 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.AuthResult
 import com.tbcacademy.shopapp.R
 import com.tbcacademy.shopapp.base.BaseFragment
+import com.tbcacademy.shopapp.base.snackbar
+import com.tbcacademy.shopapp.data.UserPreference
 import com.tbcacademy.shopapp.databinding.LoginFragmentBinding
 import com.tbcacademy.shopapp.main.MainActivity
+import com.tbcacademy.shopapp.main.NavigationActivity
 import com.tbcacademy.shopapp.ui.auth.AuthViewModel
 import com.tbcacademy.shopapp.utils.EventObserver
+import com.tbcacademy.shopapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::inflate) {
 
     val viewModel: AuthViewModel by activityViewModels()
+    private lateinit var preference: UserPreference
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,18 +43,32 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::i
                 binding.etPassword.text.toString()
             )
         }
+
+
+        binding.cbRememberMe.setOnClickListener {
+            preference = UserPreference(requireContext())
+            preference.saveUserSession(true)
+
+
+        }
+
+
     }
 
     private fun subscribeToObservers() {
         viewModel.loginStatus.observe(viewLifecycleOwner, EventObserver(
-            onError = {},
+            onError = {
+                binding.loginProgress.isVisible = false
+                snackbar(it)
+            },
             onLoading = { binding.loginProgress.isVisible = true },
-        ) {
+
+            ) {
             binding.loginProgress.isVisible = false
-            findNavController().navigate(R.id.action_loginFragment_to_navHomeFragment)
-           /* if (requireActivity() is MainActivity) {
-                (activity as MainActivity?)?.showBottomNavigationView()
-            }*/
+            Intent(requireContext(), NavigationActivity::class.java).also {
+                startActivity(it)
+                requireActivity().finish()
+            }
 
         })
 
@@ -69,4 +91,6 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::i
         binding.tvRegister.text = spannable
 
     }
+
+
 }

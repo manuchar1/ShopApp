@@ -22,4 +22,29 @@
         android:name="com.tbcacademy.shopapp.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.tbcacademy.shopapp.ui.user.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/userPostsFragment"
+        android:name="com.tbcacademy.shopapp.ui.user.userposts.UserPostsFragment"
+        android:label="user_posts_fragment"
+        tools:layout="@layout/user_posts_fragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.tbcacademy.shopapp.ui.user.about.AboutFragment"
+        android:label="about_fragment"
+        tools:layout="@layout/about_fragment" />
+    <fragment
+        android:id="@+id/userCartsFragment"
+        android:name="com.tbcacademy.shopapp.ui.user.usercarts.UserCartsFragment"
+        android:label="user_carts_fragment"
+        tools:layout="@layout/user_carts_fragment" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.tbcacademy.shopapp.ui.orders.OrdersFragment"
+        android:label="orders_fragment"
+        tools:layout="@layout/orders_fragment" />
 </navigation>
