@@ -10,4 +10,8 @@ object Constants {
     const val TOKEN = "TOKEN"
     const val HAS_SESSION = "HAS_SESSION"
 
+    const val CAMERA = 1
+    const val GALLERY = 2
+    const val IMAGE_DIRECTORY = "Images"
+
 }

@@ -44,7 +44,7 @@ class SplashFragment : BaseFragment<SplashFragmentBinding>(SplashFragmentBinding
 
         preference = UserPreference(requireContext())
 
-        if (preference.hasSession()) {
+        if (preference.token() == "login") {
             Intent(requireContext(), NavigationActivity::class.java).also {
                 startActivity(it)
                 requireActivity().finish()

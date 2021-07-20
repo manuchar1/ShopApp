@@ -1,7 +1,11 @@
 package com.tbcacademy.shopapp.di
 
 import android.content.Context
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.tbcacademy.shopapp.BuildConfig
+import com.tbcacademy.shopapp.R
 import com.tbcacademy.shopapp.data.UserPreference
 import com.tbcacademy.shopapp.network.PostService
 import com.tbcacademy.shopapp.repositories.posts.PostRepository
@@ -78,6 +82,17 @@ object AppModule {
     fun providePostRepository(
         apiService:PostService
     ):PostRepository = PostRepositoryImpl(apiService)
+
+    @Singleton
+    @Provides
+    fun provideGlideInstance(
+        @ApplicationContext context: Context
+    ) = Glide.with(context).setDefaultRequestOptions(
+        RequestOptions()
+            .placeholder(R.drawable.ic_placeholder_image)
+            .error(R.drawable.ic_error)
+            .diskCacheStrategy(DiskCacheStrategy.DATA)
+    )
 
 
 }

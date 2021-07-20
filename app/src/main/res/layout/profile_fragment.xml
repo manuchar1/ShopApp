@@ -7,12 +7,15 @@
     tools:context=".ui.user.profile.ProfileFragment">
 
     <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivProfilePicture"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/ic_user"
-        app:shapeAppearanceOverlay="@style/Circular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Circular"
+        app:srcCompat="@drawable/ic_user" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

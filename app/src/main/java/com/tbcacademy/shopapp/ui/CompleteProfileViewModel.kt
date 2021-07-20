@@ -1,4 +1,4 @@
-package com.tbcacademy.shopapp.ui.user.profile
+package com.tbcacademy.shopapp.ui
 
 import android.content.Context
 import android.net.Uri
@@ -9,14 +9,16 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
-class ProfileViewModel @ViewModelInject constructor(
+class CompleteProfileViewModel @ViewModelInject constructor(
     private val applicationContext: Context,
     private val dispatcher: CoroutineDispatcher = Dispatchers.Main
 
-    ) : ViewModel() {
+) : ViewModel() {
 
     private val _curImageUri = MutableLiveData<Uri>()
     val curImageUri: LiveData<Uri> = _curImageUri
+
+
 
     fun setCurImageUri(uri: Uri) {
         _curImageUri.postValue(uri)

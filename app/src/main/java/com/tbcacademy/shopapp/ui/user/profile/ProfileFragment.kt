@@ -8,9 +8,12 @@ import com.tbcacademy.shopapp.databinding.ProfileFragmentBinding
 
 class ProfileFragment : BaseFragment<ProfileFragmentBinding>(ProfileFragmentBinding::inflate) {
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         hideBottomNavigation()
     }
+
 
 }

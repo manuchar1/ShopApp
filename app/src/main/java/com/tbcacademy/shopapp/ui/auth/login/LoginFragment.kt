@@ -27,7 +27,8 @@ import com.tbcacademy.shopapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::inflate) {
+class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::inflate),
+    View.OnClickListener {
 
     val viewModel: AuthViewModel by activityViewModels()
     private lateinit var preference: UserPreference
@@ -43,15 +44,9 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::i
                 binding.etPassword.text.toString()
             )
         }
+        preference = UserPreference(requireContext())
 
-
-        binding.cbRememberMe.setOnClickListener {
-            preference = UserPreference(requireContext())
-            preference.saveUserSession(true)
-
-
-        }
-
+        binding.cbRememberMe.setOnClickListener(this)
 
     }
 
@@ -65,11 +60,27 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::i
 
             ) {
             binding.loginProgress.isVisible = false
-            Intent(requireContext(), NavigationActivity::class.java).also {
-                startActivity(it)
-                requireActivity().finish()
+
+
+
+            if (preference.token() == "completeProfile") {
+                preference = UserPreference(requireContext())
+
+                Intent(requireContext(), NavigationActivity::class.java).also {
+                    startActivity(it)
+                    requireActivity().finish()
+
+                }
+
+            } else {
+                findNavController().navigate(R.id.action_loginFragment_to_completeProfileFragment)
             }
 
+            if (binding.cbRememberMe.isChecked) {
+                preference = UserPreference(requireContext())
+                preference.saveToken("login")
+
+            }
         })
 
 
@@ -90,6 +101,16 @@ class LoginFragment : BaseFragment<LoginFragmentBinding>(LoginFragmentBinding::i
         binding.tvRegister.movementMethod = LinkMovementMethod.getInstance()
         binding.tvRegister.text = spannable
 
+    }
+
+    override fun onClick(v: View?) {
+        when (v) {
+            binding.cbRememberMe -> {
+                preference = UserPreference(requireContext())
+                preference.saveUserSession(true)
+
+            }
+        }
     }
 
 

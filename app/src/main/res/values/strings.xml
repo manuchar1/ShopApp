@@ -32,4 +32,18 @@
     <string name="search">Search</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="upload_profile_picture">Upload Profile Picture</string>
+    <string name="add_your_card">Add your Card</string>
+    <string name="card_number">Card Number</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="security_code">Security Code</string>
+    <string name="add_location">Add Location</string>
+    <string name="add_your_address">Add your Address</string>
+    <string name="complete_profile">Complete Profile</string>
+    <string name="title_select_image">Select Image</string>
+    <string name="lbl_camera">Camera</string>
+    <string name="lbl_gallery">gallery</string>
+    <string name="msg_turned_off_permissions">It Looks like you have turned off permissions required for this feature. It can be enabled under Application Settings</string>
 </resources>
